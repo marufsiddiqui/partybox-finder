@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Is bike available?', async ({ page }) => {
+test('Is price OK?', async ({ page }) => {
   await page.goto('https://de.jbl.com/bluetooth-lautsprecher/PARTYBOX310-.html');
 
   const pageData = await page.evaluate(() => {
@@ -11,5 +11,5 @@ test('Is bike available?', async ({ page }) => {
 
   const price = pageData.ecommerce.detail.products[0].price
 
-  await expect(price).toBeLessThan(400)
+  await expect(price).toBeGreaterThan(401)
 });
