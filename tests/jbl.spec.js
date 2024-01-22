@@ -7,9 +7,8 @@ test('Is price OK?', async ({ page }) => {
     return window.pageData; // Assuming pageData is in the global scope
   });
 
-  console.log('pageData:', pageData);
-
   const price = pageData.ecommerce.detail.products[0].price
+  console.log('Current Price:', price);
 
   await expect(price).toBeGreaterThan(401)
 });
